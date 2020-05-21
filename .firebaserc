@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pmg-dashboard": {
+      "hosting": {
+        "pmg-dashboard": [
+          "pmg-dashboard"
+        ]
+      }
+    }
+  }
+}

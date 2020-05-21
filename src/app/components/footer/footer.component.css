@@ -1,0 +1,9 @@
+.fab {
+    font-size: 45px;
+    color: #000;
+    text-decoration: none;
+}
+
+.fab:hover {
+    color: #5c5c5c;
+}
