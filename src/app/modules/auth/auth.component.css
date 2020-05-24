@@ -4,17 +4,36 @@
 }
 
 #login-container {
-    padding-top: 5rem;
+    transform: translateY(8rem);
     padding-bottom: 3rem;
-    height: 90vh;
+    min-height: 90vh;
 }
 
 #signup-container {
-    padding-top: 5rem;
+    transform: translateY(2rem);
     padding-bottom: 3rem;
-    height: 90vh;
+    min-height: 90vh;
 }
 
 mat-form-field {
     width: 100%;
 }
+
+@media (min-width: 360px) {
+    #login-container {
+        transform: translateY(4rem);
+        padding-bottom: 1rem;
+        min-height: 90vh;
+    }
+    #signup-container {
+        transform: translateY(3rem);
+        padding-bottom: 1rem;
+        min-height: 90vh;
+    }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}

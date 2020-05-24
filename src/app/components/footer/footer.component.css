@@ -5,5 +5,9 @@
 }
 
 .fab:hover {
-    color: #5c5c5c;
+    color: #004aad;
+}
+
+.powered {
+    text-decoration: none;
 }

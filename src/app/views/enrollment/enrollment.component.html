@@ -1,1 +1,134 @@
-<p>enrollment works!</p>
+<div id="enrollment">
+
+    <div class="enrollment-header">
+        <h3 class="font-weight-bolder">Completa los siguientes campos para continuar a EduSoft</h3>
+    </div>
+
+    <mat-vertical-stepper [linear]="false" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Completa con tus datos personales</ng-template>
+
+                <mat-form-field>
+                    <mat-label>Cédula</mat-label>
+                    <input matInput placeholder="000-0000000-0" formControlName="document" required>
+                </mat-form-field>
+
+                <br>
+
+                <mat-form-field>
+                    <mat-label>Nombres</mat-label>
+                    <input matInput placeholder="Will" formControlName="firstName" required>
+                </mat-form-field>
+
+
+
+                <mat-form-field>
+                    <mat-label>Apellidos</mat-label>
+                    <input matInput placeholder="Smith" formControlName="lastName" required>
+                </mat-form-field>
+
+                <br>
+
+                <mat-form-field>
+                    <mat-label>Fecha de nacimiento</mat-label>
+                    <input matInput placeholder="000-0000000-0" formControlName="birthDay">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Lugar de nacimiento</mat-label>
+                    <input matInput placeholder="Baní" formControlName="birthPlace">
+                </mat-form-field>
+
+                <br>
+
+                <mat-form-field>
+                    <mat-label>Correo Electrónico</mat-label>
+                    <input matInput placeholder="your@mail.com" formControlName="email" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Número de contacto</mat-label>
+                    <input matInput placeholder="000-000-0000" formControlName="phone" required>
+                </mat-form-field>
+
+                <br>
+
+                <div class="pt-3">
+                    <button mat-button matStepperNext>Siguiente</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Completa con los datos de la Institución</ng-template>
+
+
+                <mat-form-field>
+                    <mat-label>Nombre de la Institución</mat-label>
+                    <input matInput placeholder="000-0000000-0" formControlName="name" required>
+                </mat-form-field>
+
+                <br>
+
+                <mat-form-field>
+                    <mat-label>Director o Encargado general</mat-label>
+                    <input matInput placeholder="Will Smith" formControlName="director" required>
+                </mat-form-field>
+
+
+
+                <mat-form-field>
+                    <mat-label>Dirección</mat-label>
+                    <input matInput placeholder="Calle N..." formControlName="address" required>
+                </mat-form-field>
+
+                <br>
+
+                <mat-form-field>
+                    <mat-label>Cantidad de estudiantes</mat-label>
+                    <input matInput placeholder="100..." formControlName="studentsCount" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Cantidad de áreas del saber</mat-label>
+                    <input matInput placeholder="6..." formControlName="areasCount">
+                </mat-form-field>
+
+                <br>
+
+                <mat-form-field>
+                    <mat-label>Correo Electrónico</mat-label>
+                    <input matInput placeholder="your@mail.com" formControlName="email" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Número de contacto</mat-label>
+                    <input matInput placeholder="000-000-0000" formControlName="phone" required>
+                </mat-form-field>
+
+                <br>
+
+                <div class="pt-3">
+                    <button mat-button matStepperPrevious>Volver</button>
+                    <button mat-button matStepperNext>Siguiente</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Finalizar</ng-template>
+            <p class="lead">¡Felicitaciones! <br> Has completado todos los campos de manera exitosa. Si te encuentras en
+                este
+                punto es porque ya has leído y aceptado nuestros <a href="#" target="_blank">Términos y Condiciones</a>
+                de uso. De ser así, dale click al botón <strong>Finalizar</strong> y en seguida estaremos contactando
+                contigo y tu
+                institución.</p>
+            <div>
+                <button mat-button matStepperPrevious>Volver</button>
+                <button mat-button (click)="stepper.reset()" color="warn">Resetear</button>
+                <button mat-button onclick="alert('ready')" color="primary">Finalizar</button>
+            </div>
+        </mat-step>
+    </mat-vertical-stepper>
+</div>
+<app-footer id="contacts"></app-footer>

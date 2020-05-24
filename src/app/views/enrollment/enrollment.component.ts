@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-enrollment',
@@ -7,9 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnrollmentComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
+  constructor(private _formBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    this.firstFormGroup = this._formBuilder.group({
+      document: ['', Validators.required, Validators.minLength(11)],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      birthDay: [''],
+      birthPlace: [''],
+      email: ['', Validators.required, Validators.email],
+      phone: ['', Validators.required],
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      name: ['', Validators.required],
+      director: ['', Validators.required],
+      address: ['', Validators.required],
+      studentsCount: [''],
+      areasCount: [''],
+      email: ['', Validators.required, Validators.email],
+      phone: ['', Validators.required],
+    });
   }
 
 }

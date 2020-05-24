@@ -1,0 +1,147 @@
+#home {
+    min-height: 100vh;
+}
+
+.padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.padding-2 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.body-waves {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.home {
+    background-color: #004aad;
+    position: relative;
+    color: white;
+}
+
+.home-content {
+    padding-top: 20%;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.home-img {
+    width: 100%;
+    height: 100%;
+    padding-top: 1rem;
+}
+
+.home-content .d-flex .lead {
+    margin: 0;
+    padding: 0;
+}
+
+.home-content .d-flex a {
+    text-decoration: none;
+    margin: 0;
+    font-size: 2rem;
+    color: #004aad;
+    padding-top: 1.5rem;
+}
+
+.home-content .d-flex a:hover {
+    color: rgb(92, 2, 226);
+}
+
+.how-it-works {
+    background-color: #004aad;
+}
+
+#desliza {
+    padding-right: 1rem;
+}
+
+.how-it-works {
+    background-color: white;
+    position: relative;
+    color: black;
+}
+
+.how-it-works-content {
+    padding-top: 6rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.how-it-works-img {
+    width: 85%;
+    height: 85%;
+}
+
+.get-started {
+    background-color: #004aad;
+    min-height: 30vh;
+    color: white;
+    padding-top: 5rem;
+}
+
+#get-started .body-waves {
+    transform: translateY(-1rem);
+}
+
+@media (min-width: 300px) {
+    .home-content {
+        padding-top: 15%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .how-it-works-content {
+        padding-top: 3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .how-it-works-img {
+        width: 100%;
+        height: 100%;
+    }
+    .body-waves {
+        width: 100vw;
+        transform: translateY(-0.1rem);
+    }
+    .get-started {
+        transform: translateY(-1rem);
+        background-color: #004aad;
+        min-height: 40vh;
+        color: white;
+    }
+}
+
+@media (min-width: 768px) {
+    .home-content {
+        padding-top: 20%;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+    .how-it-works-content {
+        padding-top: 6rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+    .how-it-works-img {
+        width: 85%;
+        height: 85%;
+    }
+    .body-waves {
+        width: 100vw;
+    }
+    .get-started {
+        transform: translateY(-1rem);
+        background-color: #004aad;
+        min-height: 30vh;
+        color: white;
+    }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}

@@ -1,0 +1,13 @@
+#enrollment {
+    min-height: 100vh;
+}
+
+mat-form-field {
+    min-width: 25rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.enrollment-header {
+    padding: 2rem;
+}

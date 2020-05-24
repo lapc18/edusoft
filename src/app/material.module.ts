@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import { MatRadioModule } from '@angular/material/radio';
     MatCardModule,
     MatDialogModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatStepperModule
+
   ],
   exports: [
     MatSliderModule,
@@ -40,7 +43,8 @@ import { MatRadioModule } from '@angular/material/radio';
     MatCardModule,
     MatDialogModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatStepperModule
   ]
 })
 export class MaterialModule { }

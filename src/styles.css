@@ -5,3 +5,20 @@ html, body {
     overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
 }
+
+.bg-primary-color {
+    background-color: #004aad;
+}
+
+.btn {
+    border-radius: 5rem;
+    font-weight: bolder;
+}
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
