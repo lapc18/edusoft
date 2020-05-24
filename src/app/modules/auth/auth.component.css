@@ -4,9 +4,9 @@
 }
 
 #login-container {
-    transform: translateY(8rem);
+    transform: translateY(10rem);
     padding-bottom: 3rem;
-    min-height: 90vh;
+    min-height: 80vh;
 }
 
 #signup-container {
@@ -32,7 +32,18 @@ mat-form-field {
     }
 }
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    #login-container {
+        transform: translateY(8rem);
+        padding-bottom: 1rem;
+        min-height: 85vh;
+    }
+    #signup-container {
+        transform: translateY(3rem);
+        padding-bottom: 1rem;
+        min-height: 90vh;
+    }
+}
 
 @media (min-width: 992px) {}
 

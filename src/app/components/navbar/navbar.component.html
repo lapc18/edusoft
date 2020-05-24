@@ -1,13 +1,14 @@
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary-color">
     <div class="container">
-        <a class="navbar-brand" href="#navbar"> <img width="45px" height="45px" src="../../../assets/logo.png" alt="">
-            EduSoft</a>
+        <a class="navbar-brand" href="https://devlegnd.com"> <img width="45px" height="45px"
+                src="../../../assets/logo.png" alt="">
+            EduSoft by DevLegnd</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto animated bounceInLeft delay-1s">
+            <ul class="navbar-nav m-auto animated bounceInLeft">
                 <li class="nav-item">
                     <a class="nav-link" data-scroll href="#home">Inicio</a>
                 </li>
@@ -21,6 +22,9 @@
                     <a class="nav-link" data-scroll href="#contacts">Contactos</a>
                 </li>
             </ul>
+            <form class="form-inline">
+                <button class="btn btn-outline-light" (click)="navToSignIn()">Iniciar sesión</button>
+            </form>
         </div>
     </div>
 </nav>

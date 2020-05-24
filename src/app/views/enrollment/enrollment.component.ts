@@ -15,6 +15,7 @@ export class EnrollmentComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.firstFormGroup = this._formBuilder.group({
       document: ['', Validators.required, Validators.minLength(11)],
       firstName: ['', Validators.required],
