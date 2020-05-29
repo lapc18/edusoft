@@ -7,6 +7,7 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomModalComponent } from '.././components/custom-modal/custom-modal.component';
 
 
 
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     EnrollmentComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    CustomModalComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    CustomModalComponent
   ]
 })
 export class SharedModule { }

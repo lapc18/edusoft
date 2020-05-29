@@ -1,0 +1,8 @@
+<h1 class="font-weight-bolder text-center">{{data.title}}</h1>
+<p *ngIf="data.subtitle" class="lead m-0 pb-2 text-muted text-center">{{ data.subtitle }}</p>
+<div mat-dialog-content>
+  <p class="lead" [innerHTML]="data.content"></p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data" (click)="onNoClick()">Ok</button>
+</div>

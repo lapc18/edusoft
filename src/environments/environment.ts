@@ -1,15 +1,16 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCrU3ZTrVVqH9QLRkLBZu5diUxhmdlRVZM",
-    authDomain: "pmg-dashboard.firebaseapp.com",
-    databaseURL: "https://pmg-dashboard.firebaseio.com",
-    projectId: "pmg-dashboard",
-    storageBucket: "pmg-dashboard.appspot.com",
-    messagingSenderId: "944105997915",
-    appId: "1:944105997915:web:95f3ae48b0a9b99c02217e",
-    measurementId: "G-Q53076D1RV"
-  }
+    apiKey: "AIzaSyC9NgeZsd1alF2u_oeeShB7IOVrRjOolkc",
+    authDomain: "edusoft-2020.firebaseapp.com",
+    databaseURL: "https://edusoft-2020.firebaseio.com",
+    projectId: "edusoft-2020",
+    storageBucket: "edusoft-2020.appspot.com",
+    messagingSenderId: "696453254957",
+    appId: "1:696453254957:web:07a85b932e5074d2e10da4",
+    measurementId: "G-DLHDSQBJXK"
+  },
+  mailer: 'http://localhost:5000/api/edusoft'
 };
 
 /*

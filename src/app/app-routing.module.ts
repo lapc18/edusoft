@@ -6,6 +6,7 @@ import { LoginComponent } from './views/login/login.component';
 
 
 const routes: Routes = [
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: '', component: HomeComponent },
   { path: 'enrollment', component: EnrollmentComponent },
   { path: 'admin', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) },
