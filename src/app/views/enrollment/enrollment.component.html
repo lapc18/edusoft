@@ -4,7 +4,7 @@
         <h3 class="font-weight-bolder">Completa los siguientes campos para continuar a EduSoft</h3>
     </div>
 
-    <mat-vertical-stepper [linear]="false" #stepper>
+    <mat-vertical-stepper [linear]="true" #stepper>
         <mat-step [stepControl]="firstFormGroup">
             <form [formGroup]="firstFormGroup">
                 <ng-template matStepLabel>Completa con tus datos personales</ng-template>
@@ -20,8 +20,6 @@
                     <mat-label>Nombres</mat-label>
                     <input matInput placeholder="Will" formControlName="firstName" required>
                 </mat-form-field>
-
-
 
                 <mat-form-field>
                     <mat-label>Apellidos</mat-label>
@@ -55,7 +53,7 @@
                 <br>
 
                 <div class="pt-3">
-                    <button mat-button matStepperNext>Siguiente</button>
+                    <button [disabled]="!firstFormGroup.valid" mat-button matStepperNext>Siguiente</button>
                 </div>
             </form>
         </mat-step>
@@ -71,7 +69,7 @@
 
                 <mat-form-field>
                     <mat-label>Número de contacto</mat-label>
-                    <input matInput placeholder="000-000-0000" formControlName="phone" required>
+                    <input matInput placeholder="000-000-0000" formControlName="phone" type="tel" required>
                 </mat-form-field>
 
                 <br>
@@ -90,19 +88,19 @@
 
                 <mat-form-field>
                     <mat-label>Cantidad de estudiantes</mat-label>
-                    <input matInput placeholder="100..." formControlName="studentsCount" required>
+                    <input matInput placeholder="100..." formControlName="studentsCount" type="number" required>
                 </mat-form-field>
 
                 <mat-form-field>
                     <mat-label>Cantidad de áreas del saber</mat-label>
-                    <input matInput placeholder="6..." formControlName="areasCount">
+                    <input matInput placeholder="6..." formControlName="areasCount" type="number" required>
                 </mat-form-field>
 
                 <br>
 
                 <mat-form-field>
                     <mat-label>Correo Electrónico</mat-label>
-                    <input matInput placeholder="your@mail.com" formControlName="email" required>
+                    <input matInput placeholder="your@mail.com" formControlName="email" type="email" required>
                 </mat-form-field>
 
                 <mat-form-field>
@@ -115,18 +113,12 @@
 
                 <div class="pt-3">
                     <button mat-button matStepperPrevious>Volver</button>
-                    <button mat-button matStepperNext>Siguiente</button>
+                    <button [disabled]="!secondFormGroup.valid" mat-button matStepperNext>Siguiente</button>
                 </div>
             </form>
         </mat-step>
         <mat-step>
             <ng-template matStepLabel>Finalizar</ng-template>
-            <!-- <p class="lead">¡Felicitaciones! <br> Has completado todos los campos de manera exitosa. Si te encuentras en
-                este
-                punto es porque ya has leído y aceptado nuestros <a href="#" target="_blank">Términos y Condiciones</a>
-                de uso. De ser así, dale click al botón <strong>Finalizar</strong> y en seguida estaremos contactando
-                contigo y tu
-                institución.</p> -->
             <div>
                 <button mat-button matStepperPrevious>Volver</button>
                 <button mat-button (click)="stepper.reset()" color="warn">Resetear</button>

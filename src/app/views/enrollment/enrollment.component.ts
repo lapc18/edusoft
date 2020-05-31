@@ -34,17 +34,15 @@ export class EnrollmentComponent implements OnInit {
     public dialog: MatDialog,
     private router: Router,
     private _mailer: MailService
-  ) { }
+  ) {
 
-  ngOnInit() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.firstFormGroup = this._formBuilder.group({
-      document: ['', Validators.required, Validators.minLength(11)],
+      document: ['', [Validators.required, Validators.minLength(11)]],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       birthDay: [''],
       birthPlace: [''],
-      email: ['', Validators.required, Validators.email],
+      email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
     });
     this.secondFormGroup = this._formBuilder.group({
@@ -53,22 +51,27 @@ export class EnrollmentComponent implements OnInit {
       address: ['', Validators.required],
       studentsCount: [''],
       areasCount: [''],
-      email: ['', Validators.required, Validators.email],
-      pwd: ['', Validators.required, Validators.minLength(8)],
+      email: ['', [Validators.required, Validators.email]],
+      pwd: ['', [Validators.required, Validators.minLength(8)]],
       phone: ['', Validators.required],
     });
   }
 
+  ngOnInit() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  }
+
   public async enroll(): Promise<void> {
     this.mapForms();
+    this.openDialog();
     await this._firebase.addInstitution(this.institution);
+    await this._firebase.addUser(this.user);
     await this._firebase.signUp(this.user);
-    console.log(this.mail);
     this._mailer.send(this.mail).subscribe(
       res => console.log(`mailer to ${this.mail.name} response: ${JSON.stringify(res)}`),
       err => console.log(`mailer to ${this.mail.name} error response: ${err}`),
     );
-    this.openDialog();
   }
 
   private mapForms(): void {
@@ -103,8 +106,10 @@ export class EnrollmentComponent implements OnInit {
       email: this.institution.email,
       name: this.institution.name,
       subject: 'Edusoft: Bienvenido a nuestra plataforma',
-      body: 'Sean bienvenidos a EduSoft, la plataforma que va a evolucionar la educación con el buen uso de la tecnología. \n Es todo un placer tanto para EduSoft como para DevLegnd. En ese mismo orden, cabe destacar que su usuario ha sido creado \n con éxito y nuestro equipo está trabajando para habilitar su dashboard de manera exclusiva, de la cual va a recibir un link \n de acceso más adelante, donde tendrá acceso a la plataforma y podrá iniciar su jornada de trabajo inteligente y digital.\n \n  Si tienen alguna duda, no dude en visitar nuestro Website https://devlegnd.com y contactarnos por esa via o la más deseada de \n las que tenemos disponibles en nuestro site.\n',
+      body: 'Sea bienvenido a EduSoft, la plataforma que va a evolucionar la educación con el buen uso de la tecnología. \n Es todo un placer tanto para EduSoft como para DevLegnd. En ese mismo orden, cabe destacar que su usuario ha sido creado \n con éxito y nuestro equipo está trabajando para habilitar su dashboard de manera exclusiva, de la cual va a recibir un link \n de acceso más adelante, donde tendrá acceso a la plataforma y podrá iniciar su jornada de trabajo inteligente y digital.\n \n  Si tienen alguna duda, no dude en visitar nuestro Website https://devlegnd.com y contactarnos por esa via o la más deseada de \n las que tenemos disponibles en nuestro site.\n',
     };
+
+    console.log(this.institutionUser.email);
 
   }
 

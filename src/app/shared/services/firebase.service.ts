@@ -14,9 +14,9 @@ import { Student } from '../models/student';
 })
 export class FirebaseService {
 
-  private userPath: string = '/users';
-  private studentPath: string = '/students';
-  private institutionPath: string = '/institutions';
+  private userPath: string = 'users';
+  private studentPath: string = 'students';
+  private institutionPath: string = 'institutions';
 
   private userRef: AngularFirestoreCollection<User> = null;
   private studentRef: AngularFirestoreCollection<Student> = null;
@@ -34,14 +34,14 @@ export class FirebaseService {
     this.studentRef = afs.collection(this.studentPath);
     this.institutionRef = afs.collection(this.institutionPath);
 
-    this.user$ = this.firebaseAuth.authState.pipe(
-      switchMap(user => {
-        if (user)
-          return this.afs.doc<User>(`${this.userPath}/${user.uid}`).valueChanges();
-        else
-          return of(null);
-      })
-    );
+    // this.user$ = this.firebaseAuth.authState.pipe(
+    //   switchMap(user => {
+    //     if (user)
+    //       return this.afs.doc<User>(`${this.userPath}/${user.uid}`).valueChanges();
+    //     else
+    //       return of(null);
+    //   })
+    // );
 
   }
 
@@ -52,38 +52,35 @@ export class FirebaseService {
 
   public async signUp(user: User): Promise<void> {
     await this.firebaseAuth.createUserWithEmailAndPassword(user.email, user.pwd);
-    await this.addUser(user);
   }
 
   public async signOut(): Promise<void> {
     await this.firebaseAuth.signOut();
   }
 
-  public async addUser(user: User): Promise<boolean> {
-    let data = null;
-    data = this.findFirstByEmail(user.email, this.userPath).subscribe(
-      res => data = res,
+  public async addUser(user: User): Promise<any> {
+    let data = false;
+    return this.findByEmail(user.email, this.userPath).subscribe(
+      res => {
+        data = res.length > 0 ? true : false;
+        if (data == false) {
+          this.userRef.add({ ...user });
+          console.log(`user added => ${user.email}`);
+          return true;
+        } else {
+          console.log(`user not added because exits=> ${user.email}`);
+          return false;
+        }
+      },
       err => console.log('error => ', err)
     );
-    console.log(data);
-    if (data == null) {
-      this.userRef.add({ ...user });
-      console.log(`user added: ${user}`);
-      return true;
-    } else {
-      return false;
-    }
 
   }
 
-  public findFirstByEmail(email: string, path: string): Observable<any> {
-    return this.afs.collection(`${path}`, ref => ref.where('email', '==', `${email}`)).snapshotChanges().pipe(
-      first(),
+  public findByEmail(email: string, path: string): Observable<any> {
+    return this.afs.collection(`${path}`, ref => ref.where('email', '==', `${email}`)).valueChanges().pipe(
       map(snapshot => {
-        return snapshot.map(a => {
-          const data = a.payload.doc.data;
-          return data;
-        })
+        return snapshot.map(data => data);
       })
     );
   }
@@ -93,19 +90,22 @@ export class FirebaseService {
   }
 
 
-  public async addStudent(student: Student): Promise<boolean> {
-    let data = null;
-    this.findFirstByEmail(student.email, this.studentPath).subscribe(
-      res => data = res,
+  public async addStudent(student: Student): Promise<any> {
+    let data = false;
+    return this.findByEmail(student.email, this.studentPath).subscribe(
+      res => {
+        data = res.length > 0 ? true : false;
+        if (data == false) {
+          this.studentRef.add({ ...student });
+          console.log(`student added => ${student.email}`);
+          return true;
+        } else {
+          console.log(`student not added because exits=> ${student.email}`);
+          return false;
+        }
+      },
       err => console.log('error => ', err)
     );
-
-    if (data == null) {
-      this.studentRef.add({ ...student });
-      return true;
-    } else {
-      return false;
-    }
 
   }
 
@@ -113,19 +113,22 @@ export class FirebaseService {
     return this.userRef;
   }
 
-  public async addInstitution(institution: Institution): Promise<boolean> {
-    let data = null;
-    this.findFirstByEmail(institution.email, this.institutionPath).subscribe(
-      res => data = res,
+  public async addInstitution(institution: Institution): Promise<any> {
+    let data = false;
+    return this.findByEmail(institution.email, this.institutionPath).subscribe(
+      res => {
+        data = res.length > 0 ? true : false;
+        if (data == false) {
+          this.institutionRef.add({ ...institution });
+          console.log(`institution added => ${institution.email}`);
+          return true;
+        } else {
+          console.log(`institution not added because exits=> ${institution.email}`);
+          return false;
+        }
+      },
       err => console.log('error => ', err)
     );
-
-    if (data == null) {
-      this.institutionRef.add({ ...institution });
-      return true;
-    } else {
-      return false;
-    }
 
   }
 
