@@ -58,6 +58,14 @@ export class FirebaseService {
     await this.firebaseAuth.signOut();
   }
 
+  public findByEmail(email: string, path: string): Observable<any> {
+    return this.afs.collection(`${path}`, ref => ref.where('email', '==', `${email}`)).valueChanges().pipe(
+      map(snapshot => {
+        return snapshot.map(data => data);
+      })
+    );
+  }
+
   public async addUser(user: User): Promise<any> {
     let data = false;
     return this.findByEmail(user.email, this.userPath).subscribe(
@@ -77,18 +85,9 @@ export class FirebaseService {
 
   }
 
-  public findByEmail(email: string, path: string): Observable<any> {
-    return this.afs.collection(`${path}`, ref => ref.where('email', '==', `${email}`)).valueChanges().pipe(
-      map(snapshot => {
-        return snapshot.map(data => data);
-      })
-    );
-  }
-
   public getAllUser(): AngularFirestoreCollection<User> {
     return this.userRef;
   }
-
 
   public async addStudent(student: Student): Promise<any> {
     let data = false;
@@ -135,6 +134,5 @@ export class FirebaseService {
   public getAllInstitution(): AngularFirestoreCollection<Institution> {
     return this.institutionRef;
   }
-
 
 }

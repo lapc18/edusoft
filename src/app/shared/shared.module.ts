@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from '../views/home/home.component';
-import { LoginComponent } from '../views/login/login.component';
 import { EnrollmentComponent } from '../views/enrollment/enrollment.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
@@ -14,7 +13,6 @@ import { CustomModalComponent } from '.././components/custom-modal/custom-modal.
 @NgModule({
   declarations: [
     HomeComponent,
-    LoginComponent,
     EnrollmentComponent,
     FooterComponent,
     NavbarComponent,
@@ -28,7 +26,6 @@ import { CustomModalComponent } from '.././components/custom-modal/custom-modal.
   ],
   exports: [
     HomeComponent,
-    LoginComponent,
     EnrollmentComponent,
     FooterComponent,
     NavbarComponent,
