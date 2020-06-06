@@ -1,6 +1,9 @@
 export interface InstitutionBoard {
     id?: any;
-    intitutionId: any;
+    email: any;
+    name: any;
     url: string;
+    description: string;
+    areasCount: string;
     isActive: boolean;
 }

@@ -1,0 +1,44 @@
+.join-card {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.card {
+    min-width: 5rem;
+    min-height: 9rem;
+    transition: ease 0.5s;
+}
+
+@media (min-width: 300px) {
+    .card {
+        width: 90vw;
+        min-height: 30vh;
+        transition: ease 0.5s;
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 40vw;
+        min-height: 35vh;
+        transition: ease 0.5s;
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: 40vw;
+        min-height: 35vh;
+        transition: ease 0.5s;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        width: 45vw;
+        min-height: 35vh;
+        transition: ease 0.5s;
+    }
+}

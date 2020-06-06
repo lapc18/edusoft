@@ -5,6 +5,7 @@ export interface Institution {
     regUser: InstitutionUser;
     name: string;
     director: string;
+    description: string;
     address: string;
     studentsCount: string;
     areasCount: string;

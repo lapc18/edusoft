@@ -7,6 +7,9 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomModalComponent } from '.././components/custom-modal/custom-modal.component';
+import { JoinComponent } from '../views/join/join.component';
+import { JoinCardComponent } from '../components/join-card/join-card.component';
+import { ModalFormComponent } from '../components/modal-form/modal-form.component';
 
 
 
@@ -16,7 +19,10 @@ import { CustomModalComponent } from '.././components/custom-modal/custom-modal.
     EnrollmentComponent,
     FooterComponent,
     NavbarComponent,
-    CustomModalComponent
+    CustomModalComponent,
+    JoinComponent,
+    JoinCardComponent,
+    ModalFormComponent,
   ],
   imports: [
     CommonModule,
@@ -32,7 +38,9 @@ import { CustomModalComponent } from '.././components/custom-modal/custom-modal.
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    CustomModalComponent
+    CustomModalComponent,
+    JoinComponent,
+    ModalFormComponent
   ]
 })
 export class SharedModule { }

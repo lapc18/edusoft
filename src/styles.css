@@ -8,11 +8,16 @@ html, body {
 
 .bg-primary-color {
     background-color: #004aad;
+    color: white;
 }
 
 .btn {
     border-radius: 5rem;
     font-weight: bolder;
+}
+
+.card {
+    border-radius: 2.5rem;
 }
 
 @media (min-width: 576px) {}

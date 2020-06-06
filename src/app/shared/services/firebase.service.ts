@@ -8,6 +8,7 @@ import { switchMap, first, map } from 'rxjs/operators';
 import { User } from '../models/user';
 import { Institution } from '../models/institution';
 import { Student } from '../models/student';
+import { InstitutionBoard } from '../models/institution-board';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,12 @@ export class FirebaseService {
   private userPath: string = 'users';
   private studentPath: string = 'students';
   private institutionPath: string = 'institutions';
+  private institutionBoardPath: string = 'institutions-board';
 
   private userRef: AngularFirestoreCollection<User> = null;
   private studentRef: AngularFirestoreCollection<Student> = null;
   private institutionRef: AngularFirestoreCollection<Institution> = null;
+  private institutionBoardRef: AngularFirestoreCollection<InstitutionBoard> = null;
 
 
   private user$: Observable<User>;
@@ -133,6 +136,29 @@ export class FirebaseService {
 
   public getAllInstitution(): AngularFirestoreCollection<Institution> {
     return this.institutionRef;
+  }
+
+  public async addInstitutionBoard(institution: InstitutionBoard): Promise<any> {
+    let data: boolean = false;
+    return this.findByEmail(institution.email, this.institutionBoardPath).subscribe(
+      res => {
+        data = res.length > 0 ? true : false;
+        if (!data) {
+          this.institutionBoardRef.add({ ...institution });
+          console.log(`institution board added => ${institution.email}`);
+          return true;
+        } else {
+          console.log(`institution not added because exits=> ${institution.email}`);
+          return false;
+        }
+      },
+      err => console.log('error => ', err)
+    );
+
+  }
+
+  public getAllInstitutionBoards(): AngularFirestoreCollection<InstitutionBoard> {
+    return this.institutionBoardRef;
   }
 
 }

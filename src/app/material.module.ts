@@ -12,6 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -30,8 +31,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatDialogModule,
     MatInputModule,
     MatRadioModule,
-    MatStepperModule
-
+    MatStepperModule,
+    MatTableModule
   ],
   exports: [
     MatSliderModule,
@@ -45,7 +46,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatDialogModule,
     MatInputModule,
     MatRadioModule,
-    MatStepperModule
+    MatStepperModule,
+    MatTableModule
   ]
 })
 export class MaterialModule { }
