@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-modal-form',
@@ -8,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class ModalFormComponent implements OnInit {
 
   constructor() { }
+
+  @Input() title: string = 'EduSoft';
+  @Input('form-group') formGroup: FormGroup;
+
 
   ngOnInit(): void {
   }
