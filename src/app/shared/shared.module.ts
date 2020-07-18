@@ -10,6 +10,7 @@ import { CustomModalComponent } from '.././components/custom-modal/custom-modal.
 import { JoinComponent } from '../views/join/join.component';
 import { JoinCardComponent } from '../components/join-card/join-card.component';
 import { ModalFormComponent } from '../components/modal-form/modal-form.component';
+import { PrimeNgModule } from '../primeng.module';
 
 
 
@@ -29,6 +30,7 @@ import { ModalFormComponent } from '../components/modal-form/modal-form.componen
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    PrimeNgModule
   ],
   exports: [
     HomeComponent,
@@ -40,7 +42,8 @@ import { ModalFormComponent } from '../components/modal-form/modal-form.componen
     ReactiveFormsModule,
     CustomModalComponent,
     JoinComponent,
-    ModalFormComponent
+    ModalFormComponent,
+    PrimeNgModule
   ]
 })
 export class SharedModule { }
