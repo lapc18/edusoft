@@ -25,9 +25,6 @@ export class FirebaseService {
   private institutionRef: AngularFirestoreCollection<Institution> = null;
   private institutionBoardRef: AngularFirestoreCollection<InstitutionBoard> = null;
 
-
-  private user$: Observable<User>;
-
   constructor(
     private firebaseAuth: AngularFireAuth,
     private afs: AngularFirestore
@@ -37,17 +34,7 @@ export class FirebaseService {
     this.studentRef = afs.collection(this.studentPath);
     this.institutionRef = afs.collection(this.institutionPath);
 
-    // this.user$ = this.firebaseAuth.authState.pipe(
-    //   switchMap(user => {
-    //     if (user)
-    //       return this.afs.doc<User>(`${this.userPath}/${user.uid}`).valueChanges();
-    //     else
-    //       return of(null);
-    //   })
-    // );
-
   }
-
 
   public async signIn(user: string, pwd: string): Promise<void> {
     await this.firebaseAuth.signInWithEmailAndPassword(user, pwd);
