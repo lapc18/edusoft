@@ -4,6 +4,7 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
+import { MenuModule } from 'primeng/menu';
 
 @NgModule({
     imports: [
@@ -11,13 +12,15 @@ import { TooltipModule } from 'primeng/tooltip';
         TableModule,
         ButtonModule,
         ToolbarModule,
-        TooltipModule
+        TooltipModule,
+        MenuModule,
     ],
     exports: [
         TableModule,
         ButtonModule,
         ToolbarModule,
-        TooltipModule
+        TooltipModule,
+        MenuModule
     ],
 })
 export class PrimeNgModule {

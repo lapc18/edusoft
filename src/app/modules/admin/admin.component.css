@@ -1,6 +1,5 @@
 .admin-board {
     min-height: 100vh;
-    padding-top: 4rem;
 }
 
 nav {
@@ -23,15 +22,10 @@ button {
     min-height: 60vh;
 }
 
-.spacer {
-    flex: 1 1 auto;
-}
-
-.icon-space {
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.avatar img {
-    border-radius: 10rem;
+.status-dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
 }

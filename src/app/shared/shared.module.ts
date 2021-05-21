@@ -11,6 +11,7 @@ import { JoinComponent } from '../views/join/join.component';
 import { JoinCardComponent } from '../components/join-card/join-card.component';
 import { ModalFormComponent } from '../components/modal-form/modal-form.component';
 import { PrimeNgModule } from '../primeng.module';
+import { ActionMenuComponent } from '../components/action-menu/action-menu.component';
 
 
 
@@ -24,6 +25,7 @@ import { PrimeNgModule } from '../primeng.module';
     JoinComponent,
     JoinCardComponent,
     ModalFormComponent,
+    ActionMenuComponent,
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ import { PrimeNgModule } from '../primeng.module';
     CustomModalComponent,
     JoinComponent,
     ModalFormComponent,
-    PrimeNgModule
+    PrimeNgModule,
+    ActionMenuComponent
   ]
 })
 export class SharedModule { }

@@ -4,6 +4,5 @@ export interface InstitutionBoard {
     name: any;
     url: string;
     description: string;
-    areasCount: string;
-    isActive: boolean;
+    status: boolean;
 }
