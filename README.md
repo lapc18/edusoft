@@ -1,4 +1,8 @@
-# PmgDashboard
+# Edusoft
+
+A basic WebApp with landing page, Login and some form sections
+
+You can visit the site using this [link](https://seriestream.netlify.app/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
@@ -25,3 +29,18 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## Follow me
+
+You can follow me on:
+
+- [Instagram](https://instagram.com/lapc18)
+- [Instagram](https://instagram.com/devlegnd)
+- [Facebook](https://facebook.com/lapx18)
+- [Facebook](https://facebook.com/devlegnd)
+
+Also can check my [Business Page](https:////devlegnd.com)
